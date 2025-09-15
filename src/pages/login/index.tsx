@@ -3,12 +3,15 @@ import { Input } from '../../components/inputs/index'
 import { useState, type FormEvent } from "react"
 import { auth } from '../../services/firebaseconection'
 import { signInWithEmailAndPassword } from 'firebase/auth'
+import { Eye, EyeOff } from "lucide-react"
 
 
 export function Login(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate();
+   const [showPassword, setShowPassword] = useState(false);
+
 
     function HandleSubmit(e: FormEvent){
         e.preventDefault();
@@ -26,7 +29,7 @@ export function Login(){
      })
      .catch((error) => {
         console.log(error);
-        
+        alert("Senha ou Email incorretos!")
      })
 
     }
@@ -46,13 +49,25 @@ export function Login(){
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
-
+                
+            <div className="relative flex items-center">
                 <Input
                 placeholder="********"
-                type="password"
+                type={showPassword ? "password" : "text"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+               
                 />
+                <span 
+                onClick={() => setShowPassword(!showPassword)} 
+                className="absolute right-3 top-1/5 cursor-pointer text-gray-400"
+                    >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </span>
+            </div>
+
+            
+              
 
                 <button type="submit" className="h-9 bg-blue-400 border-0 font-medium text-white">Acessar</button>
             </form>
