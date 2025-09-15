@@ -53,7 +53,7 @@ export function Login(){
             <div className="relative flex items-center">
                 <Input
                 placeholder="********"
-                type={showPassword ? "password" : "text"}
+                type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                
@@ -62,7 +62,7 @@ export function Login(){
                 onClick={() => setShowPassword(!showPassword)} 
                 className="absolute right-3 top-1/5 cursor-pointer text-gray-400"
                     >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
                 </span>
             </div>
 
