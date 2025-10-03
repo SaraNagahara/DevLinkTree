@@ -87,6 +87,7 @@ export function Home(){
       <img src={saraImg} alt="eu"  className='max-w-xl rounded-4xl h-50'/>
       <h1 className="md:text-4xl  text-3xl font-bold  mt-5">Sara Nagahara</h1>
       <h2 className="md:text-2xl  text-1xl mt-5">Dev Front-End | Tec. Hardware </h2>
+      <p className="md:text-2xl  text-1xl mt-5">"Keep Moving Forward" - Walt Disney</p>
       <span className=" mb-5 mt-3 text-2xl ">Veja meus links 👇</span>
 
       <main className="flex flex-col w-11/12 max-w-xl text-center">
